@@ -42,7 +42,8 @@ import {reducers} from '../app/statemanagement/reducers';
     StoreModule.forRoot(reducers),
     SidebarModule,
     NavbarModule,
-    FooterModule
+    FooterModule,
+    NguiMapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

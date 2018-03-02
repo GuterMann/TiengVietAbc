@@ -1,27 +1,30 @@
 import { Component, OnInit, Renderer, ViewChild, ElementRef } from '@angular/core';
-import { SidebarRoutes } from '../../sidebar/models/SidebarRouteInfo';
+import { SidebarRoutes, SidebarRouteInfo } from '../../sidebar/models/SidebarRouteInfo';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ApplicationState } from '../../statemanagement/models/ApplicationState';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { getSelectedSidebarItemName } from '../../statemanagement/selectors/sidebar.selectors';
 
 @Component({
-    moduleId: module.id,
     selector: 'app-navbar',
     templateUrl: 'navbar.component.html'
 })
 
 export class NavbarComponent implements OnInit {
-    private listTitles: any[];
-    location: Location;
+    private listTitles: SidebarRouteInfo[];
     private nativeElement: Node;
     private toggleButton;
     private sidebarVisible: boolean;
+    selectedSidebarMenuName$: Observable<string>;
 
     @ViewChild('app-navbar') button;
 
-    constructor(location: Location, private renderer: Renderer, private element: ElementRef) {
-        this.location = location;
+    constructor(private element: ElementRef, private store: Store<ApplicationState>) {
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
+        this.selectedSidebarMenuName$ = this.store.select(getSelectedSidebarItemName);
     }
 
     ngOnInit() {

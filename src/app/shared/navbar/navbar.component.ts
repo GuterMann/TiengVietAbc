@@ -39,6 +39,7 @@ export class NavbarComponent implements OnInit {
         }
         return 'Dashboard';
     }
+
     sidebarToggle() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];

@@ -6,6 +6,7 @@ export interface SidebarRouteInfo {
 }
 
 export const SidebarRoutes: SidebarRouteInfo[] = [
+    { path:'lookup', title: 'Dictionary', icon:'ti-book', class:''},
     { path: 'dashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
     { path: 'user', title: 'User Profile',  icon: 'ti-user', class: '' },
     { path: 'table', title: 'Table List',  icon: 'ti-view-list-alt', class: '' },

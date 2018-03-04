@@ -27,7 +27,7 @@ export class SidebarComponent implements OnInit {
     }
     menuItemClicked($event): void {
         if ($event.hasOwnProperty('title')) {
-          let resultName = 'Dashboard';
+          let resultName = 'Dictionary';
           resultName = $event.title;
           this.store.dispatch(new SidebarSelectedItemChangedAction(resultName));
         }

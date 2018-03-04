@@ -3,5 +3,5 @@ export interface LayoutState {
 }
 
 export const Init_Layout_State: LayoutState = {
-    sidebarSelectedItem: 'Dashboard'
+    sidebarSelectedItem: 'Dictionary'
 };

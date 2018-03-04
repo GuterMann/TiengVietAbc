@@ -8,13 +8,19 @@ import {IconsComponent} from './icons/icons.component';
 import {MapsComponent} from './maps/maps.component';
 import {NotificationsComponent} from './notifications/notifications.component';
 import {UpgradeComponent} from './upgrade/upgrade.component';
+import { LookupComponent } from './dictionary/lookup/lookup.component';
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'lookup',
         pathMatch: 'full'
-    }, {
+    },
+    {
+        path: 'lookup',
+        component: LookupComponent
+    }, 
+    {
         path: 'dashboard',
         component: DashboardComponent
     }, {

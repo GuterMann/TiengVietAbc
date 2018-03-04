@@ -24,9 +24,12 @@ import { StoreModule } from '@ngrx/store';
 import * as fromRouter from '@ngrx/router-store';
 import {reducers} from '../app/statemanagement/reducers';
 
+import { LookupComponent } from './dictionary/lookup/lookup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    LookupComponent,
     DashboardComponent,
     UserComponent,
     TableComponent,
@@ -34,6 +37,7 @@ import {reducers} from '../app/statemanagement/reducers';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
+
     UpgradeComponent
   ],
   imports: [
